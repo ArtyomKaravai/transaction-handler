@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet  author="artyom"  id="1">
+        <createTable tableName="transaction">
+
+            <column  name="id"  type="integer" autoIncrement="true">
+                <constraints primaryKey="true"  unique="true" />
+            </column>
+
+            <column  name="date"  type="timestamp">
+            </column>
+
+            <column  name="type"  type="varchar2">
+                <constraints foreignKeyName="fk_transaction_type"
+                             referencedTableName="transaction_type"
+                             referencedColumnNames="type_name"/>
+            </column>
+
+            <column  name="actor"  type="varchar2">
+                <constraints foreignKeyName="fk_transaction_actor"
+                             referencedTableName="transaction_actor"
+                             referencedColumnNames="actor_name"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

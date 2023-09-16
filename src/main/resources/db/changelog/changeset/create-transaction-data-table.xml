@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet  author="artyom"  id="1">
+        <createTable tableName="transaction_data">
+
+            <column  name="transaction_id"  type="integer">
+                <constraints primaryKey="true"
+                             unique="true"
+                             foreignKeyName="fk_transaction_id"
+                             referencedTableName="transaction"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <column  name="key"  type="varchar2">
+                <constraints primaryKey="true"  unique="true" />
+            </column>
+
+            <column  name="value"  type="varchar2">
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

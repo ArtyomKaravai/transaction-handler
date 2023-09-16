@@ -1,0 +1,10 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <include file="classpath:db/changelog/changeset/create-transaction-actor-table.xml"/>
+    <include file="classpath:db/changelog/changeset/create-transaction-type-table.xml"/>
+    <include file="classpath:db/changelog/changeset/create-transaction-table.xml"/>
+    <include file="classpath:db/changelog/changeset/create-transaction-data-table.xml"/>
+</databaseChangeLog>
