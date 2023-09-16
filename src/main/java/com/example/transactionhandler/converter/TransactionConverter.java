@@ -19,7 +19,6 @@ public interface TransactionConverter {
     @IterableMapping(qualifiedByName = "toDto")
     List<TransactionDto> toDtoList(List<Transaction> entities);
 
-    @Named("toDto")
     @Mapping(source = "type", target = "type.typeName")
     @Mapping(source = "actor", target = "actor.actorName")
     @Mapping(source = "dto", target = "data", qualifiedByName = "fromMap")
